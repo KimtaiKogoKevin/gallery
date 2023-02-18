@@ -13,7 +13,7 @@ const app = express();
 
 // connecting the database
 
-const MONGODB_URI = 'mongodb+srv://kevinkogo:<password>@ipweekone.gus6huv.mongodb.net/?retryWrites=true&w=majority'
+let mongodb_url = 'mongodb+srv://kevinkogo:<password>@ipweekone.gus6huv.mongodb.net/?retryWrites=true&w=majority'
 let dbName = 'ipWeekOne';
 mongoose.connect(`${mongodb_url}${dbName}`,{ useNewUrlParser: true , useUnifiedTopology: true }, (err)=>{
     if (err) console.log(err)

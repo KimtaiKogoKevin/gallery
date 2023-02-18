@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    
+    tools {
+        nodejs 'Node-14'
+    }
+    
+    stages {
+        stage ('Clone repository'){
+            steps{
+                git 'https://github.com/KimtaiKogoKevin/gallery.git'
+            }
+        }
+        
+        stage ('Install dependencies'){
+            steps{
+                sh 'npm install'
+            }
+        }
+        
+        stage ('Run tests'){
+            steps{
+                sh 'npm test'
+            }
+        }
+        
+        
+    }
+}

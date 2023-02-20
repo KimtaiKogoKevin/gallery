@@ -32,7 +32,7 @@ pipeline {
         stage ('Deploy to Render'){
             steps{
                 withCredentials([gitUsernamePassword(credentialsId:'42b90fbb-942e-4589-930b-c6e7c853f527')]){
-                sh 'git push '
+                sh 'https://api.render.com/deploy/srv-cfojmq82i3mo4btvhb10?key=-tJe9JTO08A '
                 }
             }
         }

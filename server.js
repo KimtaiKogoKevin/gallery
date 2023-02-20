@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('./_config');
+const config = require('./_config');
 
 // Define routes
 let index = require('./routes/index');
@@ -12,7 +13,8 @@ let image = require('./routes/image');
 const app = express();
 
 // connecting the database
-let mongodb_url = 'mongodb+srv://kevinkogo:4DKRzGoYbWwS3iku@ipweekone.gus6huv.mongodb.net/?retryWrites=true&w=majority';
+
+let mongodb_url = 'mongodb+srv://kevinkogo:4DKRzGoYbWwS3iku@ipweekone.gus6huv.mongodb.net/?retryWrites=true&w=majority'
 let dbName = 'ipWeekOne';
 mongoose.connect(`${mongodb_url}${dbName}`,{ useNewUrlParser: true , useUnifiedTopology: true }, (err)=>{
     if (err) console.log(err)

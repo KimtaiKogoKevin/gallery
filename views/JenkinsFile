@@ -31,6 +31,7 @@ pipeline {
         }
         stage ('Deploy to Render'){
             steps{
+                withCredentials([usernameColonPassword(credentialsId:'KimtaiKogoKevin',variable:'1051113kkk')])
                 sh 'https://api.render.com/deploy/srv-cfojmq82i3mo4btvhb10?key=-tJe9JTO08A'
             }
         }

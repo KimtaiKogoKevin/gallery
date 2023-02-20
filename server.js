@@ -12,8 +12,7 @@ let image = require('./routes/image');
 const app = express();
 
 // connecting the database
-
-let mongodb_url = 'mongodb+srv://kevinkogo:4DKRzGoYbWwS3iku@ipweekone.gus6huv.mongodb.net/?retryWrites=true&w=majority'
+let mongodb_url = 'mongodb+srv://kevinkogo:4DKRzGoYbWwS3iku@ipweekone.gus6huv.mongodb.net/?retryWrites=true&w=majority';
 let dbName = 'ipWeekOne';
 mongoose.connect(`${mongodb_url}${dbName}`,{ useNewUrlParser: true , useUnifiedTopology: true }, (err)=>{
     if (err) console.log(err)
@@ -57,7 +56,7 @@ app.use('/image', image);
  
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,() =>{
-    console.log(`Server is listening at https://gallery-natp.onrender.com:${PORT}`)
+    console.log(`Server is listening at http://localhost:${PORT}`)
 });
 
 

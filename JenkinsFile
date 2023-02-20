@@ -31,7 +31,7 @@ pipeline {
         }
         stage ('Deploy to Render'){
             steps{
-                withCredentials([usernameColonPassword(credentialsId:'KimtaiKogoKevin',variable:'1051113kkk')])
+                withCredentials([usernameColonPassword(credentialsId:'42b90fbb-942e-4589-930b-c6e7c853f527',variable:'1051113kkk')])
                 sh 'https://api.render.com/deploy/srv-cfojmq82i3mo4btvhb10?key=-tJe9JTO08A'
             }
         }
@@ -41,7 +41,7 @@ pipeline {
     
      post {
         failure{
-           emailext body: 'This is body', subject: 'Test email integration', to: 'kevin.kogo@student.moringaschool.com'
+           emailext body: 'This is build has failed , {env.BUILD_NUMBER}', subject: 'Failed Build', to: 'kevin.kogo@student.moringaschool.com'
         }
         
          always{

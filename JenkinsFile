@@ -31,9 +31,7 @@ pipeline {
         }
         stage ('Deploy to Render'){
             steps{
-                withCredentials([sshUserPrivateKey(credentialsId:'IpWeekOne',passphraseVariable:'kevin kogo',usernameVariable:'kogo')]){
-                sh 'https://api.render.com/deploy/srv-cfojmq82i3mo4btvhb10?key=-tJe9JTO08A '
-                }
+                httpRequest (httpMode:'POST',responseHandle:'NONE',url:'https://api.render.com/deploy/srv-cfojmq82i3mo4btvhb10?key=-tJe9JTO08A',wrapAsMultiPart:false)
             }
         }
         
@@ -42,11 +40,11 @@ pipeline {
     
      post {
         failure{
-           emailext body: 'This is build has failed! Fatal', subject: 'Failed Build', to: 'kevin.kogo@student.moringaschool.com'
+           emailext body: 'This build no : ${env.BUILD_NUMBER} has failed', subject: 'Build Failed', to: 'kevin.kogo@student.moringaschool.com'
         }
         
-         always{
-            slackSend( channel: "#jenkins", token: "slack_webhook token", color: "good", message: "Successful Build! Build Number ${env.BUILD_NUMBER} , go to ${RENDER_SITE} for more details")
+         success{
+            slackSend( channel: "#jenkins", token: "slack_webhook token", color: "good", message: "Hey Sam , my build was successful ! The  Build Number ${env.BUILD_NUMBER} is , go to ${RENDER_SITE} for more details, note you must have credentials to view the deployment screen")
         }
     }
 }

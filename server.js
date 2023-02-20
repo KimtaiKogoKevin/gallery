@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('./_config');
-// const config = require('./_config');
+const config = require('./_config');
 
 // Define routes
 let index = require('./routes/index');
@@ -58,7 +58,7 @@ app.use('/image', image);
  
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,() =>{
-    console.log(`Server is listening at https://gallery-natp.onrender.com${PORT}`)
+    console.log(`Server is listening at https://gallery-natp.onrender.com:${PORT}`)
 });
 
 

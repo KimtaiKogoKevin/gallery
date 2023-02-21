@@ -4,4 +4,4 @@ The pipeline installs necessary tools and depndencies using npm , it then builds
 
 **Tools Used**
 Jenkins , Node Js , MongoDB Atlas, ngrok for webhooks.
-__Kevin Kogo Kimutai__
+__Kevin K Kimutai__

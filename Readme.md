@@ -6,3 +6,4 @@ The pipeline installs necessary tools and depndencies using npm , it then builds
 Jenkins , Node Js , MongoDB Atlas, ngrok for webhooks.
 __Kevin K Kimutai__
 __Update of slack Notification__
+**DevOps is cool**
